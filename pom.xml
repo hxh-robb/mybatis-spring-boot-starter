@@ -64,6 +64,16 @@
       <name>Mybatis GitHub Pages</name>
       <url>git:ssh://git@github.com/mybatis/spring-boot-starter.git?gh-pages#</url>
     </site>
+    <snapshotRepository>
+      <id>internal.repo.snapshots</id>
+      <name>Temporary Staging Repository(Snapshots)</name>
+      <url>file://${user.dir}/target/mvn-repo/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>internal.repo.releases</id>
+      <name>Temporary Staging Repository(Releases)</name>
+      <url>file://${user.dir}/target/mvn-repo/releases</url>
+    </repository>
   </distributionManagement>
 
   <properties>
@@ -146,10 +156,19 @@
         <enabled>false</enabled>
       </snapshots>
     </repository>
+    <!--
     <repository>
       <id>sonatype-oss-snapshots</id>
       <name>Sonatype OSS Snapshots Repository</name>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    -->
+    <repository>
+      <id>robb-mvn-repo</id>
+      <url>https://rawgit.com/hxh-robb/mvn-repo/master/snapshots</url>
       <snapshots>
         <enabled>true</enabled>
       </snapshots>
